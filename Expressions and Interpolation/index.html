@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ImgApp">
+    <head>
+        <title>Expressions and Interpolation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="angular.js"></script>
+        <script src="app.js"></script>
+
+    </head>
+    <body>
+        <h1>Expressions and Interpolation</h1>
+        <div ng-controller="ImgController">
+            <div>
+                <button ng-click="changeImage()">Toggle image</button>
+                <br>
+                <img ng-src="images/image_{{imageNumber}}.jpg" width="200px"> <!--ng-src hace que espere a que angular parsee {{imageNumber}}-->
+            </div>
+        </div>
+    </body>
+</html>
