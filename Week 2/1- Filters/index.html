@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="angular.js"></script>
+        <script src="app.js"></script>
+
+    </head>
+    <body ng-app="MsgApp">
+        <h1>Filters</h1>
+        <div ng-controller="MsgController">
+            <span>{{name}} has a message for you:</span>
+            <br>
+            <span>{{sayMessage()}}</span>
+            <br><br>
+            <span>{{name}} state: {{stateOfBeing}}</span>
+            <br>
+            <button ng-click="feedKevin()">Feed {{name}}</button>
+            Cost: {{cookieCost | currency : "C$" : 4}}
+        </div>
+    </body>
+</html>
