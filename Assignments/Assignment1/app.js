@@ -11,7 +11,9 @@
             var items = $scope.itemList.split(',');
             
             for (var i=0; i<items.length; i++) {
-                if (items[i] != "") {
+                if (items[i] == "") {continue;}
+
+                if (/\S/.test(items[i])) {
                     counter++;
                 }
             }
