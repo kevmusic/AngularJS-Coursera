@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+    <head>
+        <title>My first AngularJS App!</title>
+        <link rel="stylesheet" href="bootstrap.min.css" type="text/css">
+        <script src="angular.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body ng-app="LunchCheck">
+        <div class="container-fluid" ng-controller="LunchCheckController">
+            <div class="jumbotron">
+                <h1>Lunch Check</h1>
+            </div>
+            
+            <div class="form-group" style="width: 75%">
+                <label for="not-using-this-:)">Things for lunch</label>
+                <input ng-model="itemList"
+                       id="not-using-this-:)"
+                       class="form-control"
+                       placeholder="Type lunch items separated by comma" />
+                
+                
+                <label class="{{alert}}">
+                    {{warningLabel}}
+                </label>
+                
+                <br><br>
+                <button ng-click="check()" class="btn btn-primary">Check If Too Much</button>
+                <br>
+            </div>
+            
+            <div style="position: absolute; bottom: 10px;">
+                <label class="alert alert-warning">
+                    *It doesn't consider an empty item
+                </label>
+            </div>
+        </div>
+    </body>
+</html>
