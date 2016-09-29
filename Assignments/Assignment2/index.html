@@ -31,22 +31,22 @@
                 <h1 style="text-align: center">Shopping List Checkoff</h1>
             </div>
             
-            <div ng-controller="ToBuyController"
+            <div ng-controller="ToBuyController as tbC"
                  class="col-sm-6 col-md-6">
                 <div class="thumbnail">
                     <img src="images/pending.png" width="50px">
                     <div class="caption">
                         <h2>To buy</h2>
                         
-                        <div ng-show="toBuyList.length == 0"
+                        <div ng-show="tbC.toBuyList.length == 0"
                              class="alert alert-success">
                             Everything is bought!
                         </div>
                         
                         <ul class="list-group">
-                            <li ng-repeat="item in toBuyList"
+                            <li ng-repeat="item in tbC.toBuyList"
                                 class="list-group-item">
-                                <button ng-click="buyItem($index)"
+                                <button ng-click="tbC.buyItem($index)"
                                         class="badge btn btn-success"
                                         style="background-color: #4cae4c">
                                     Bought
@@ -58,20 +58,20 @@
                 </div>
             </div>
             
-            <div ng-controller="AlreadyBoughtController"
+            <div ng-controller="AlreadyBoughtController as abC"
                  class="col-sm-6 col-md-6">
                 <div class="thumbnail">
                     <img src="images/check.png" width="50px">
                     <div class="caption">
                         <h2>Already bought</h2>
 
-                        <div ng-show="alreadyBoughtList.length == 0"
+                        <div ng-show="abC.alreadyBoughtList.length == 0"
                              class="alert alert-warning">
                             Nothing bought yet
                         </div>
                         
                         <ul class="list-group">
-                            <li ng-repeat="item in alreadyBoughtList"
+                            <li ng-repeat="item in abC.alreadyBoughtList"
                                 class="list-group-item">
                                 Bought {{item.quantity}} {{item.name}}
                             </li>
