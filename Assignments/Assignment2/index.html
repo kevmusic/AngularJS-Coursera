@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Shopping List Checkoff</title>
+        <link rel="stylesheet" href="bootstrap.min.css" type="text/css">
+        <style>
+            h2 {
+                text-align: center;
+                margin-top: 0px;
+            }
+            .alert {
+                margin-top: 25px;
+                padding: 10px;
+                text-align: center;
+            }
+            .alert,
+            .list-group-item {
+                font-size: 120%;
+            }
+            .badge {
+                font-size: 80%;
+            }
+        </style>
+        <script src="angular.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body ng-app="ShoppingListCheckOff">
+        <div class="container-fluid">
+            
+            <div class="jumbotron">
+                <h1 style="text-align: center">Shopping List Checkoff</h1>
+            </div>
+            
+            <div ng-controller="ToBuyController"
+                 class="col-sm-6 col-md-6">
+                <div class="thumbnail">
+                    <img src="images/pending.png" width="50px">
+                    <div class="caption">
+                        <h2>To buy</h2>
+                        
+                        <div ng-show="toBuyList.length == 0"
+                             class="alert alert-success">
+                            Everything is bought!
+                        </div>
+                        
+                        <ul class="list-group">
+                            <li ng-repeat="item in toBuyList"
+                                class="list-group-item">
+                                <button ng-click="buyItem($index)"
+                                        class="badge btn btn-success"
+                                        style="background-color: #4cae4c">
+                                    Bought
+                                </button>
+                                Buy {{item.quantity}} {{item.name}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div ng-controller="AlreadyBoughtController"
+                 class="col-sm-6 col-md-6">
+                <div class="thumbnail">
+                    <img src="images/check.png" width="50px">
+                    <div class="caption">
+                        <h2>Already bought</h2>
+
+                        <div ng-show="alreadyBoughtList.length == 0"
+                             class="alert alert-warning">
+                            Nothing bought yet
+                        </div>
+                        
+                        <ul class="list-group">
+                            <li ng-repeat="item in alreadyBoughtList"
+                                class="list-group-item">
+                                Bought {{item.quantity}} {{item.name}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+</html>
