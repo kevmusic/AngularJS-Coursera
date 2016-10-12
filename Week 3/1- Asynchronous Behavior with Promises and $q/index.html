@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ShoppingListApp">
+    <head>
+        <title>Shopping List with Promises and $q</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="angular.js"></script>
+        <script src="app.js"></script>
+
+    </head>
+    <body>
+        <h1>Shopping List with Promises and $q</h1>
+        
+        <div ng-controller="ShoppingListController as list">
+            <h3>Shopping List</h3>
+            
+            <input type="text" ng-model="list.itemName" placeholder="item name">
+            <input type="text" ng-model="list.itemQuantity" placeholder="quantity">
+            boxes
+            
+            <button ng-click="list.addItem()">AddItem</button>
+            
+            <ol>
+                <li ng-repeat="item in list.items">
+                    {{item.quantity}} boxes of {{item.name}}
+                    <button ng-click="list.removeItem($index)">Remove Item</button>
+                </li>
+            </ol>
+        </div>
+        
+    </body>
+</html>
