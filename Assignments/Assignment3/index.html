@@ -1,0 +1,48 @@
+<!doctype html>
+<html ng-app="NarrowItDownApp">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <script src="scripts/jquery-3.1.0.min.js"></script>
+        <script src="scripts/angular.js"></script>
+        <script src="scripts/bootstrap.js"></script>
+
+        <script src="app.js"></script>
+
+        <title>Menu Items Finder</title>
+
+    </head>
+    <body class="container-fluid">
+
+        <div class="row">
+            <div class="jumbotron">
+                <h1 style="text-align: center">Menu Items Finder</h1>
+            </div>
+
+            <div class="container-fluid"
+                 ng-controller="NarrowItDownController as nit">
+
+                <div class="form-inline row">
+                    <div class="form-group col-sm-9 col-md-9">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Enter search term" ng-model="nit.inputSearch">
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-3 col-md-3">
+                        <button ng-click="nit.filter(nit.inputSearch)" class="btn btn-success">
+                            <span class="fa fa-search"> Search</span>
+                        </button>
+                    </div>
+                </div>
+                <br>
+
+                <found-items found="nit.found" on-remove="nit.removeItem(index)">
+                </found-items>
+            </div>
+        </div>
+
+    </body>
+</html>
