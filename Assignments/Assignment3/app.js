@@ -50,7 +50,7 @@
             
             return $http({
                 method: "GET",
-                url: ("http://davids-restaurant.herokuapp.com/menu_items.json")
+                url: ("https://davids-restaurant.herokuapp.com/menu_items.json")
             }).then(function(response) {
                 var filtered_list = [];
                 $(response.data.menu_items).each(function(index, item) {
